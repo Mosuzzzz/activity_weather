@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 class ActivityListPage extends StatelessWidget {
@@ -19,18 +18,21 @@ class ActivityListPage extends StatelessWidget {
     {'title': 'ออกกำลัง', 'date': '22 ต.ค. 2026', 'detail': 'ยืดกล้ามเนื้อ'},
     {'title': 'ออกกำลัง', 'date': '22 ต.ค. 2026', 'detail': 'ยืดกล้ามเนื้อ'},
     {'title': 'ออกกำลัง', 'date': '22 ต.ค. 2026', 'detail': 'ยืดกล้ามเนื้อ'},
+    {'title': 'ออกกำลัง', 'date': '22 ต.ค. 2026', 'detail': 'ยืดกล้ามเนื้อ'},
+    {'title': 'ออกกำลัง', 'date': '22 ต.ค. 2026', 'detail': 'ยืดกล้ามเนื้อ'},
+    {
+      'title': 'การออกกำลังกาย เป็นกิจกรรมทางกายใด ๆ ก็ได้ที่เสริมหรือคงสภาพ สมรรถภาพทางกาย ความแข็งแรงและ สุขภาพ',
+      'date': '22 ต.ค. 2026',
+      'detail': 'ยืดกล้ามเนื้อ',
+    },
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('กิจกรรม'),
-      ),
+      appBar: AppBar(title: const Text('กิจกรรม')),
       body: activities.isEmpty
-          ? const Center(
-              child: Text('ยังไม่มีกิจกรรม'),
-            )
+          ? const Center(child: Text('ยังไม่มีกิจกรรม'))
           : ListView.builder(
               itemCount: activities.length,
               itemBuilder: (context, index) {
@@ -42,12 +44,8 @@ class ActivityListPage extends StatelessWidget {
                       context,
                       MaterialPageRoute<void>(
                         builder: (context) => Scaffold(
-                          appBar: AppBar(
-                            title: Text(item['title']!),
-                          ),
-                          body: Center(
-                            child: Text(item['detail']!),
-                          ),
+                          appBar: AppBar(title: Text(item['title']!)),
+                          body: Center(child: Text(item['detail']!)),
                         ),
                       ),
                     );
@@ -59,18 +57,9 @@ class ActivityListPage extends StatelessWidget {
                       children: [
                         Text(
                           item['title']!,
-                          style: const TextStyle(
-                            fontSize: 18,
-                            fontWeight: FontWeight.bold,
-                          ),
+                          style: const TextStyle(fontSize: 17),
                         ),
-                        const SizedBox(height: 4),
-                        Text(
-                          item['date']!,
-                          style: const TextStyle(
-                            color: Colors.grey,
-                          ),
-                        ),
+                        Text(item['date']!),
                       ],
                     ),
                   ),
